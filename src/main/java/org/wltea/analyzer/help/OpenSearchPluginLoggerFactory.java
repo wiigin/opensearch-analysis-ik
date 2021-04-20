@@ -4,9 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.spi.ExtendedLogger;
 
-public class ESPluginLoggerFactory {
+public class OpenSearchPluginLoggerFactory {
 
-    private ESPluginLoggerFactory() {
+    private OpenSearchPluginLoggerFactory() {
     }
 
     static public Logger getLogger(String name) {

@@ -45,18 +45,17 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.elasticsearch.SpecialPermission;
-import org.elasticsearch.common.io.PathUtils;
-import org.elasticsearch.plugin.analysis.ik.AnalysisIkPlugin;
+import org.opensearch.SpecialPermission;
+import org.opensearch.common.io.PathUtils;
+import org.opensearch.plugin.analysis.ik.AnalysisIkPlugin;
 import org.wltea.analyzer.cfg.Configuration;
 import org.apache.logging.log4j.Logger;
-import org.wltea.analyzer.help.ESPluginLoggerFactory;
+import org.wltea.analyzer.help.OpenSearchPluginLoggerFactory;
 
 
 /**
@@ -80,7 +79,7 @@ public class Dictionary {
 	 */
 	private Configuration configuration;
 
-	private static final Logger logger = ESPluginLoggerFactory.getLogger(Dictionary.class.getName());
+	private static final Logger logger = OpenSearchPluginLoggerFactory.getLogger(Dictionary.class.getName());
 
 	private static ScheduledExecutorService pool = Executors.newScheduledThreadPool(1);
 

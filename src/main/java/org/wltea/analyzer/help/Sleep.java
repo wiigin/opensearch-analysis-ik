@@ -4,7 +4,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Sleep {
 
-    private static final Logger logger = ESPluginLoggerFactory.getLogger(Sleep.class.getName());
+    private static final Logger logger = OpenSearchPluginLoggerFactory.getLogger(Sleep.class.getName());
 
     public enum Type {MSEC, SEC, MIN, HOUR}
 

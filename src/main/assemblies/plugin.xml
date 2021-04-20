@@ -30,7 +30,7 @@
             <useProjectArtifact>true</useProjectArtifact>
             <useTransitiveFiltering>true</useTransitiveFiltering>
             <excludes>
-                <exclude>org.elasticsearch:elasticsearch</exclude>
+                <exclude>org.opensearch:opensearch</exclude>
             </excludes>
         </dependencySet>
         <dependencySet>

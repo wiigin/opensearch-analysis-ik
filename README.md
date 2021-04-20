@@ -1,48 +1,37 @@
-IK Analysis for Elasticsearch
+IK Analysis for OpenSearch
 =============================
 
-The IK Analysis plugin integrates Lucene IK analyzer (http://code.google.com/p/ik-analyzer/) into elasticsearch, support customized dictionary.
+The IK Analysis plugin integrates Lucene IK analyzer (http://code.google.com/p/ik-analyzer/) into opensearch, support customized dictionary.
 
 Analyzer: `ik_smart` , `ik_max_word` , Tokenizer: `ik_smart` , `ik_max_word`
 
 Versions
 --------
 
-IK version | ES version
+IK version | OpenSearch version
 -----------|-----------
-master | 7.x -> master
-6.x| 6.x
-5.x| 5.x
-1.10.6 | 2.4.6
-1.9.5 | 2.3.5
-1.8.1 | 2.2.1
-1.7.0 | 2.1.1
-1.5.0 | 2.0.0
-1.2.6 | 1.0.0
-1.2.5 | 0.90.x
-1.1.3 | 0.20.x
-1.0.0 | 0.16.2 -> 0.19.0
+main | 1.x -> main
 
 Install
 -------
 
 1.download or compile
 
-* optional 1 - download pre-build package from here: https://github.com/medcl/elasticsearch-analysis-ik/releases
+* optional 1 - download pre-build package from here: https://github.com/soosinha/opensearch-analysis-ik/releases
 
-    create plugin folder `cd your-es-root/plugins/ && mkdir ik`
+    create plugin folder `cd your-opensearch-root/plugins/ && mkdir ik`
     
-    unzip plugin to folder `your-es-root/plugins/ik`
+    unzip plugin to folder `your-opensearch-root/plugins/ik`
 
-* optional 2 - use elasticsearch-plugin to install ( supported from version v5.5.1 ):
+* optional 2 - use opensearch-plugin to install
 
     ```
-    ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.3.0/elasticsearch-analysis-ik-6.3.0.zip
+    ./bin/opensearch-plugin install https://github.com/soosinha/opensearch-analysis-ik/releases/download/v1.0.0/opensearch-analysis-ik-1.0.0.zip
     ```
 
-   NOTE: replace `6.3.0` to your own elasticsearch version
+   NOTE: replace `1.0.0` to your own opensearch version
 
-2.restart elasticsearch
+2.restart opensearch
 
 
 
@@ -164,7 +153,7 @@ Result
 ### Dictionary Configuration
 
 `IKAnalyzer.cfg.xml` can be located at `{conf}/analysis-ik/config/IKAnalyzer.cfg.xml`
-or `{plugins}/elasticsearch-analysis-ik-*/config/IKAnalyzer.cfg.xml`
+or `{plugins}/opensearch-analysis-ik-*/config/IKAnalyzer.cfg.xml`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -199,7 +188,7 @@ or `{plugins}/elasticsearch-analysis-ik-*/config/IKAnalyzer.cfg.xml`
 
 2. 该 http 请求返回的内容格式是一行一个分词，换行符用 `\n` 即可。
 
-满足上面两点要求就可以实现热更新分词了，不需要重启 ES 实例。
+满足上面两点要求就可以实现热更新分词了，不需要重启 OpenSearch 实例。
 
 可以将需自动更新的热词放在一个 UTF-8 编码的 .txt 文件里，放在 nginx 或其他简易 http server 下，当 .txt 文件修改时，http server 会在客户端请求该文件时自动返回相应的 Last-Modified 和 ETag。可以另外做一个工具来从业务系统提取相关词汇，并更新这个 .txt 文件。
 
@@ -216,16 +205,16 @@ have fun.
 
 
 ```bash
-git clone https://github.com/medcl/elasticsearch-analysis-ik
-cd elasticsearch-analysis-ik
+git clone https://github.com/soosinha/opensearch-analysis-ik
+cd opensearch-analysis-ik
 git checkout tags/{version}
 mvn clean
 mvn compile
 mvn package
 ```
 
-拷贝和解压release下的文件: #{project_path}/elasticsearch-analysis-ik/target/releases/elasticsearch-analysis-ik-*.zip 到你的 elasticsearch 插件目录, 如: plugins/ik
-重启elasticsearch
+拷贝和解压release下的文件: #{project_path}/opensearch-analysis-ik/target/releases/opensearch-analysis-ik-*.zip 到你的 opensearch 插件目录, 如: plugins/ik
+重启opensearch
 
 3.分词测试失败
 请在某个索引下调用analyze接口测试,而不是直接调用analyze接口
@@ -247,14 +236,11 @@ ik_smart: 会做最粗粒度的拆分，比如会将“中华人民共和国国�
 
 Changes
 ------
-*自 v5.0.0 起*
-
-- 移除名为 `ik` 的analyzer和tokenizer,请分别使用 `ik_smart` 和 `ik_max_word`
 
 
 Thanks
 ------
-YourKit supports IK Analysis for ElasticSearch project with its full-featured Java Profiler.
+YourKit supports IK Analysis for OpenSearch project with its full-featured Java Profiler.
 YourKit, LLC is the creator of innovative and intelligent tools for profiling
 Java and .NET applications. Take a look at YourKit's leading software products:
 <a href="http://www.yourkit.com/java/profiler/index.jsp">YourKit Java Profiler</a> and
