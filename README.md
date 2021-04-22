@@ -5,6 +5,8 @@ The IK Analysis plugin integrates Lucene IK analyzer (http://code.google.com/p/i
 
 Analyzer: `ik_smart` , `ik_max_word` , Tokenizer: `ik_smart` , `ik_max_word`
 
+Forked from : https://github.com/medcl/elasticsearch-analysis-ik/
+
 Versions
 --------
 
