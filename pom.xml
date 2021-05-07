@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.opensearch</groupId>
     <artifactId>opensearch-analysis-ik</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <description>IK Analyzer for OpenSearch</description>
     <inceptionYear>2011</inceptionYear>
